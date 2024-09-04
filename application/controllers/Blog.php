@@ -5,6 +5,8 @@ class Blog extends CI_Controller
 {
     public function index()
     {
-        echo "Ini Controller Blog & Method Index";
+        $data['title'] = 'My First Blog';
+        $data['blog'] = 'Second';
+        $this->load->view('blog', $data);
     }
 }
