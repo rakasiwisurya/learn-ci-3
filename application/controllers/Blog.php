@@ -7,7 +7,7 @@ class Blog extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->model('blog');
+        $this->load->model('blog_model');
     }
 
     public function index()
@@ -26,8 +26,4 @@ class Blog extends CI_Controller
         $this->load->view('blog', $data);
         $this->load->view('templates/footer');
     }
-
-    public function save() {}
-
-    public function delete() {}
 }
