@@ -3,6 +3,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Blog extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->load->model('blog');
+    }
+
     public function index()
     {
         $data['title'] = 'My First Blog';
@@ -19,4 +26,8 @@ class Blog extends CI_Controller
         $this->load->view('blog', $data);
         $this->load->view('templates/footer');
     }
+
+    public function save() {}
+
+    public function delete() {}
 }
