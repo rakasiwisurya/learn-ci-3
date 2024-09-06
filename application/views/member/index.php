@@ -2,4 +2,30 @@
 
 <div id="body">
     <a href="<?php echo site_url('member/add') ?>">Add <?php echo $title ?> </a>
+
+    <table border="1" width="50%">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Action</th>
+        </tr>
+
+        <?php 
+            $no = 1;
+            foreach($members as $member) : 
+        ?>
+            <tr align="center">
+                <td><?php echo $no++ ?></td>
+                <td><?php echo $member->name ?></td>
+                <td><?php echo $member->email ?></td>
+                <td><?php echo $member->position ?></td>
+                <td>
+                    <a href="">Edit</a>
+                    <a href="">Delete</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </div>

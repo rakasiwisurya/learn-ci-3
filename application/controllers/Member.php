@@ -13,6 +13,7 @@ class Member extends CI_Controller
     public function index()
     {
         $data['title'] = 'Member';
+        $data['members'] = $this->member_model->get_all_data()->result();
 
         $this->load->view('templates/header', $data);
         $this->load->view('member/index', $data);
