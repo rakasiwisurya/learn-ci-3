@@ -23,7 +23,7 @@
                 <td><?php echo $member->position ?></td>
                 <td>
                     <a href="<?php echo site_url('member/edit/' . $member->id) ?>">Edit</a>
-                    <a href="">Delete</a>
+                    <a onclick="return confirm('Are you sure want to delete this ?')" href="<?php echo site_url('member/delete/' . $member->id) ?>">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>

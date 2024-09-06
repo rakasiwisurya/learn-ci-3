@@ -51,4 +51,12 @@ class Member_Model extends CI_Model
 
         $this->db->update('member', $value);
     }
+
+    public function delete_data($id) 
+    {
+        // $this->db->where('id', $id);
+        // $this->db->delete('member');
+
+        $this->db->delete('member', ['id' => $id]);
+    }
 }

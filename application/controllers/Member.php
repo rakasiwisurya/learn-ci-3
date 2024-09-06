@@ -50,4 +50,10 @@ class Member extends CI_Controller
         $this->member_model->update_data();
         redirect('member');
     }
+
+    public function delete($id)
+    {
+        $this->member_model->delete_data($id);
+        redirect('member');
+    }
 }
