@@ -28,4 +28,6 @@
             </tr>
         <?php endforeach; ?>
     </table>
+
+    <a href="<?php echo site_url('/') ?>">Back To Home</a>
 </div>
