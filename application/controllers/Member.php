@@ -34,4 +34,20 @@ class Member extends CI_Controller
         $this->member_model->save_data();
         redirect('member');
     }
+
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Member';
+        $data['member'] = $this->member_model->get_detail_data($id)->row();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('member/edit', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function update()
+    {
+        $this->member_model->update_data();
+        redirect('member');
+    }
 }

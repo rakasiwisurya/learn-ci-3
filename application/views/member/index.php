@@ -22,7 +22,7 @@
                 <td><?php echo $member->email ?></td>
                 <td><?php echo $member->position ?></td>
                 <td>
-                    <a href="">Edit</a>
+                    <a href="<?php echo site_url('member/edit/' . $member->id) ?>">Edit</a>
                     <a href="">Delete</a>
                 </td>
             </tr>
