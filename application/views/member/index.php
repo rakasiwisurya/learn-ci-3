@@ -2,6 +2,7 @@
 
 <div id="body">
     <a href="<?php echo site_url('member/add') ?>">Add <?php echo $title ?> </a>
+    <a href="<?php echo site_url('auth/logout') ?>">Logout</a>
 
     <table border="1" width="50%">
         <tr>
@@ -12,9 +13,9 @@
             <th>Action</th>
         </tr>
 
-        <?php 
-            $no = 1;
-            foreach($members as $member) : 
+        <?php
+        $no = 1;
+        foreach ($members as $member) :
         ?>
             <tr align="center">
                 <td><?php echo $no++ ?></td>

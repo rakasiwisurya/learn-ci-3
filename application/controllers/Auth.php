@@ -33,7 +33,14 @@ class Auth extends CI_Controller
 
             if ($check_email_user) {
                 if (password_verify($this->input->post('password'), $check_email_user->password)) {
-                    echo 'Login Successfully';
+                    $session_user = [
+                        'id' => $check_email_user->id,
+                        'level' => $check_email_user->level
+                    ];
+
+                    $this->session->set_userdata($session_user);
+
+                    redirect('member');
                 } else {
                     $this->session->set_flashdata('message', 'Your password is wrong');
                     redirect('auth/login');
@@ -43,6 +50,12 @@ class Auth extends CI_Controller
                 redirect('auth/login');
             }
         }
+    }
+
+    public function sign_out()
+    {
+        session_destroy();
+        redirect('auth/login')
     }
 
     public function registration()
